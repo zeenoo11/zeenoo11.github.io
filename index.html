@@ -440,6 +440,253 @@
       text-decoration: underline;
     }
 
+      #calendar {
+        gap: 28px;
+      }
+
+      .calendar-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        gap: 26px;
+      }
+
+      .calendar-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 28px;
+        border-radius: var(--radius-lg);
+        background: rgba(7, 12, 34, 0.58);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 30px 70px -45px rgba(7, 12, 34, 1);
+      }
+
+      .calendar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .calendar-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .calendar-title span:first-child {
+        text-transform: capitalize;
+      }
+
+      .calendar-nav {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--fg);
+        font-size: 20px;
+        cursor: pointer;
+        transition: transform 180ms ease, border-color 180ms ease;
+      }
+
+      .calendar-nav:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+
+      .calendar-body {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .calendar-weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 8px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(162, 185, 255, 0.7);
+      }
+
+      .calendar-weekdays span {
+        text-align: center;
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .calendar-day {
+        position: relative;
+        padding: 18px 0;
+        border-radius: 18px;
+        background: rgba(9, 16, 40, 0.38);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: var(--fg);
+        transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+      }
+
+      .calendar-day:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255, 255, 255, 0.16);
+        background: rgba(9, 16, 40, 0.58);
+      }
+
+      .calendar-day.empty {
+        background: transparent;
+        border: none;
+        pointer-events: none;
+      }
+
+      .calendar-day.today {
+        border-color: rgba(119, 221, 255, 0.6);
+        box-shadow: 0 0 0 1px rgba(119, 221, 255, 0.35);
+      }
+
+      .calendar-day.has-event {
+        background: linear-gradient(145deg, rgba(124, 58, 237, 0.32), rgba(59, 130, 246, 0.24));
+        border-color: rgba(124, 58, 237, 0.4);
+      }
+
+      .calendar-day .event-type {
+        position: absolute;
+        bottom: 10px;
+        right: 12px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .calendar-day .event-type.focus {
+        background: rgba(119, 221, 255, 0.95);
+      }
+
+      .calendar-day .event-type.sync {
+        background: rgba(16, 185, 129, 0.95);
+      }
+
+      .calendar-day .event-type.live {
+        background: rgba(244, 114, 182, 0.95);
+      }
+
+      .calendar-legend {
+        display: flex;
+        gap: 14px;
+        margin: 0;
+        padding: 12px 0 0;
+        list-style: none;
+        font-size: 13px;
+        color: var(--fg-muted);
+        flex-wrap: wrap;
+      }
+
+      .calendar-legend li {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .calendar-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .calendar-dot.focus {
+        background: rgba(119, 221, 255, 0.95);
+      }
+
+      .calendar-dot.sync {
+        background: rgba(16, 185, 129, 0.95);
+      }
+
+      .calendar-dot.live {
+        background: rgba(244, 114, 182, 0.95);
+      }
+
+      .calendar-side {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 26px;
+        border-radius: var(--radius-lg);
+        background: rgba(8, 15, 38, 0.54);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(16px);
+      }
+
+      .calendar-side h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .calendar-event-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .calendar-event {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .calendar-event strong {
+        font-size: 15px;
+      }
+
+      .calendar-event span {
+        font-size: 13px;
+        color: var(--fg-muted);
+      }
+
+      .calendar-event .event-tag {
+        align-self: flex-start;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(124, 58, 237, 0.18);
+        color: rgba(162, 185, 255, 0.8);
+      }
+
+      .calendar-event.empty span {
+        color: rgba(162, 185, 255, 0.7);
+      }
+
+      @media (max-width: 960px) {
+        .calendar-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .calendar-side {
+          order: -1;
+        }
+      }
+
     @media (max-width: 720px) {
       main {
         padding: 60px 18px 80px;
@@ -471,6 +718,7 @@
       </div>
       <ul>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#calendar">Calendar</a></li>
         <li><a href="#timeline">Now</a></li>
         <li><a href="https://github.com/Zeenoo" target="_blank" rel="noreferrer">GitHub</a></li>
       </ul>
@@ -485,6 +733,8 @@
         <div class="hero-actions">
           <a class="primary" href="https://github.com/Zeenoo" target="_blank" rel="noreferrer">GitHub 살펴보기</a>
           <a class="secondary" href="https://zeenoo.dev" target="_blank" rel="noreferrer">포트폴리오 바로가기</a>
+          <a class="secondary" href="https://www.linkedin.com/in/zeenoo" target="_blank" rel="noreferrer">LinkedIn 연결하기</a>
+          <a class="secondary" href="https://www.notion.so/zeenoo" target="_blank" rel="noreferrer">Notion 작업실 열기</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -529,6 +779,46 @@
       </div>
     </section>
 
+    <section id="calendar">
+      <header>
+        <h2>공개 일정 캘린더</h2>
+        <p>다가오는 이벤트와 협업 일정을 한눈에 살펴보세요.</p>
+      </header>
+      <div class="calendar-layout">
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <button type="button" class="calendar-nav" data-calendar-nav="prev" aria-label="이전 달 보기">‹</button>
+            <div class="calendar-title">
+              <span id="calendar-month"></span>
+              <span id="calendar-year"></span>
+            </div>
+            <button type="button" class="calendar-nav" data-calendar-nav="next" aria-label="다음 달 보기">›</button>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-weekdays">
+              <span>일</span>
+              <span>월</span>
+              <span>화</span>
+              <span>수</span>
+              <span>목</span>
+              <span>금</span>
+              <span>토</span>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+          </div>
+          <ul class="calendar-legend">
+            <li><span class="calendar-dot focus"></span>주요 집중 일정</li>
+            <li><span class="calendar-dot sync"></span>커뮤니티 싱크</li>
+            <li><span class="calendar-dot live"></span>라이브 세션</li>
+          </ul>
+        </div>
+        <aside class="calendar-side">
+          <h3>이번 달 포커스</h3>
+          <ul id="calendar-event-list" class="calendar-event-list"></ul>
+        </aside>
+      </div>
+    </section>
+
     <section id="timeline">
       <header>
         <h2>지금 하고 있는 일</h2>
@@ -563,6 +853,160 @@
   <script>
     // 현재 연도를 자동으로 표시합니다.
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 달력을 렌더링하고 이벤트를 표시하는 함수입니다.
+    (function () {
+      const monthLabel = document.getElementById("calendar-month");
+      const yearLabel = document.getElementById("calendar-year");
+      const grid = document.getElementById("calendar-grid");
+      const eventList = document.getElementById("calendar-event-list");
+
+      if (!monthLabel || !yearLabel || !grid || !eventList) {
+        return;
+      }
+
+      const calendarState = {
+        current: new Date()
+      };
+
+      const calendarEvents = [
+        {
+          date: "2025-11-05",
+          title: "Notion 캡슐 업데이트",
+          description: "신규 디자인 시스템 문서를 노션 스페이스에 게시합니다.",
+          type: "focus"
+        },
+        {
+          date: "2025-11-14",
+          title: "커뮤니티 싱크 세션",
+          description: "디스코드 멤버들과 실험 결과를 공유하며 피드백을 수집합니다.",
+          type: "sync"
+        },
+        {
+          date: "2025-11-23",
+          title: "LinkedIn 라이브 AMA",
+          description: "Framer 감성 디자인 워크플로에 대해 라이브 Q&A를 진행합니다.",
+          type: "live"
+        },
+        {
+          date: "2025-12-02",
+          title: "Zero-Latency Collab 리뷰",
+          description: "다음 분기 로드맵을 위한 협업 워크플로 개선 회의를 진행합니다.",
+          type: "focus"
+        },
+        {
+          date: "2025-12-19",
+          title: "커뮤니티 데모데이",
+          description: "신규 인터랙션 프로토타입을 공개 데모로 소개합니다.",
+          type: "live"
+        }
+      ];
+
+      const today = new Date();
+
+      const typeMap = {
+        focus: "주요 집중",
+        sync: "커뮤니티",
+        live: "라이브"
+      };
+
+      const formatIso = (dateObj) => {
+        const year = dateObj.getFullYear();
+        const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+        const day = String(dateObj.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      };
+
+      const renderEventsList = (year, month) => {
+        eventList.innerHTML = "";
+        const monthEvents = calendarEvents.filter((event) => {
+          const eventDate = new Date(event.date);
+          return eventDate.getFullYear() === year && eventDate.getMonth() === month;
+        });
+
+        if (monthEvents.length === 0) {
+          const placeholder = document.createElement("li");
+          placeholder.className = "calendar-event empty";
+          placeholder.innerHTML = "<span>이번 달에는 등록된 공개 일정이 없습니다.</span>";
+          eventList.appendChild(placeholder);
+          return;
+        }
+
+        monthEvents
+          .sort((a, b) => new Date(a.date) - new Date(b.date))
+          .forEach((event) => {
+            const eventDate = new Date(event.date);
+            const item = document.createElement("li");
+            item.className = "calendar-event";
+            item.innerHTML = `
+              <span class="event-tag">${typeMap[event.type] || "포커스"}</span>
+              <strong>${eventDate.getDate()}일 · ${event.title}</strong>
+              <span>${event.description}</span>
+            `;
+            eventList.appendChild(item);
+          });
+      };
+
+      const renderCalendar = () => {
+        const reference = new Date(calendarState.current.getFullYear(), calendarState.current.getMonth(), 1);
+        const year = reference.getFullYear();
+        const monthIndex = reference.getMonth();
+
+        monthLabel.textContent = reference.toLocaleString("ko-KR", { month: "long" });
+        yearLabel.textContent = `${year}`;
+
+        const firstDayIndex = reference.getDay();
+        const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+        grid.innerHTML = "";
+
+        for (let i = 0; i < firstDayIndex; i += 1) {
+          const emptyCell = document.createElement("div");
+          emptyCell.className = "calendar-day empty";
+          grid.appendChild(emptyCell);
+        }
+
+        for (let day = 1; day <= daysInMonth; day += 1) {
+          const cellDate = new Date(year, monthIndex, day);
+          const iso = formatIso(cellDate);
+          const eventsForDay = calendarEvents.filter((event) => event.date === iso);
+
+          const dayCell = document.createElement("div");
+          dayCell.className = "calendar-day";
+          if (
+            cellDate.getFullYear() === today.getFullYear() &&
+            cellDate.getMonth() === today.getMonth() &&
+            cellDate.getDate() === today.getDate()
+          ) {
+            dayCell.classList.add("today");
+          }
+
+          if (eventsForDay.length > 0) {
+            dayCell.classList.add("has-event");
+            const indicator = document.createElement("span");
+            indicator.className = `event-type ${eventsForDay[0].type}`;
+            dayCell.appendChild(indicator);
+          }
+
+          dayCell.textContent = String(day);
+          grid.appendChild(dayCell);
+        }
+
+        renderEventsList(year, monthIndex);
+      };
+
+      document.querySelectorAll("[data-calendar-nav]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const direction = button.getAttribute("data-calendar-nav");
+          const nextMonth = new Date(calendarState.current);
+          nextMonth.setMonth(calendarState.current.getMonth() + (direction === "next" ? 1 : -1));
+          calendarState.current = nextMonth;
+          renderCalendar();
+        });
+      });
+
+      renderCalendar();
+    })();
   </script>
 </body>
 
